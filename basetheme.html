@@ -1,0 +1,1249 @@
+<!--
+(Put theme name, terms of use, credit, link to more)
+
+For more variable choices and customization options, see:
+     https://www.tumblr.com/docs/en/custom_themes
+    ://www.tumblr.com/docs/en/localizing_themes
+
+************************************
+ * CONTENTS
+ *
+ * META, RSS, ETC
+ *
+ * FAVICON, TITLE, DESCRIPTION, POST TITLE
+ *
+ * TUMBLR META TAGS
+ * ... font, text size, color, image, links, boolean toggles
+ *
+ * STYLES INDEX
+ *
+ * STYLES
+ *
+ * HTML INDEX
+ *
+ * HTML
+ *
+*********************************************-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+  <!--***********************************
+      #BLOG TITLE, FAVICON, POST TITLE
+    *********************************** -->
+  <link rel="shortcut icon" href="{Favicon}">
+
+  <title>
+    {Title}
+    {block:PostTitle}
+      - {PostTitle}
+    {/block:PostTitle}
+  </title>
+
+  {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+  {/block:Description}
+
+<!--***********************************
+     #META TAGS FOR BASIC CUSTOMIZATION
+
+     Fonts, Font Sizes, Sidebar Image,
+     Colors, Links, Boolean Toggles.
+    *********************************** -->
+
+      <!-- Fonts -->
+    <meta name="font:Title" content=""/>
+    <!-- Title, Credit, Text Post Title, Quote, Question -->
+    <meta name="font:Body" content=""/>
+    <!-- Description, Entries, Search Input/Submit, Answer, Submission Info,
+     Perma-Notes -->
+    <meta name="font:Link" content=""/>
+    <!-- Links, Menu Links, Pagination, Post Info, Quote Source, Asker, Answerer, Submission URL -->
+
+     <!-- Font Sizes -->
+    <!-- <meta name="text:Description" content="12" />
+    <meta name="text:Title" content="16" />
+    <meta name="text:Menu Link" content="13" />
+     <meta name="text:Body" content="12" />
+    <meta name="text:Links" content="13" /> -->
+
+    <!-- Colors -->
+    <meta name="color:Background" content="#ffffff"/>
+    <!-- Background, Scrollbar Track, Search Input, Search Submit Text Color,
+      Selection -->
+    <meta name="color:Accent Two" content="#f2f2f2"/>
+    <!-- Search Submit Button Border Color -->
+    <meta name="color:Accent" content="#eeeeee"/>
+    <!-- Search Submit Button Background Color -->
+    <meta name="color:Border" content="#dddddd"/>
+    <!-- Search Input Border -->
+    <meta name="color:Border Two" content="#bbbbbb"/>
+    <!-- Search Input Border (focus) -->
+    <meta name="color:Title" content="#999999"/>
+    <!-- Title, Credit, Selection Background Color -->
+    <meta name="color:Tags" content="#999999"/>
+    <!-- Tags, Comma (tags), Search Submit Buttom Border (focus) -->
+    <meta name="color:Body Text" content="#888888"/>
+    <!-- Body text, Description, Scrollbar Thumb-->
+    <meta name="color:Link" content="#777777"/>
+    <!-- Links, Post Info, Scrollbar Thumb Hover -->
+    <meta name="color:Link Hover" content="#666666"/>
+    <!-- Links Hover, Tags Hover -->
+
+    <!-- Custom Images-->
+    <meta name="image:Menu Image" content=""/>
+
+    <!-- Custom Links -->
+    <meta name="text:Link1" content="">
+    <meta name="text:Link1 Url" content="/">
+    <meta name="text:Link2" content="">
+    <meta name="text:Link2 Url" content="/">
+    <meta name="text:Link3" content="">
+    <meta name="text:Link3 Url" content="/">
+    <meta name="text:Link4" content="/">
+    <meta name="text:Link4" content="">
+
+
+    <!-- Boolean Toggles -->
+    <meta name="if:Show Title" content="0"/>
+    <meta name="if:Show Description" content="0"/>
+    <meta name="if:Show Menu Image" content="0"/>
+    <meta name="if:Show Captions" content="0"/>
+    <meta name="if:Hover Tags" content="0"/>
+    <meta name="if:Hover Post Info" content="0"/>
+    <meta name="if:Show Search" content="0"/>
+
+<!-- ***********************************
+    #STYLES INDEX
+
+   * CSS RESET
+   *
+   * WEBKIT SCROLLBAR, SELECTION
+   *
+   * DEFAULT LINK STYLES
+   *
+   * HEADER/SIDEBAR (MENU)
+   * ... menu-image, title, descr, menu-links
+   *
+   * PAGINATION
+   *
+   * SEARCH FORM
+   *
+   * CREDIT
+   *
+   * POSTS, POST-CONTAINER/ENTRY
+   * ... blockquote, hover-post-info, hover-tags
+   *
+   * POST INFO/LINKS
+   * ... post-info, note-count, reblog-link, source, via
+   *
+   * TAGS
+   * ... commma, tags-permalink
+   * POST-TYPE SPECIFIC
+   * ... captions, text, photos, chat, quote, link, video, audio, ask,submission-info
+   *
+   * MISC
+   * ... Permalink Notes List, Permalink Tags, Custom CSS
+   *
+   *********************************** -->
+
+  <style type="text/css">
+
+  /*------------------------------------*\
+    #CSS RESET
+
+     http://meyerweb.com/eric/tools/css/reset/
+     v2.0 | 20110126
+     License: none (public domain)
+
+  \*------------------------------------*/
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    	/*margin: 0;*/
+    	padding: 0;
+    	border: 0;
+    	font-size: 100%;
+    	font: inherit;
+    	vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+    	/*display: block;*/
+    }
+
+    body {
+    	line-height: 1;
+      cursor:auto;
+    }
+
+    ol, ul, li {
+    	list-style: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    /* Basic image/video/media handling */
+    img, video, object, embed {
+      max-width: 100%;
+      height: auto !important;
+    }
+
+  /*------------------------------------*\
+    #WEBKIT SCROLLBAR, SELECTION
+  \*------------------------------------*/
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {background:{color:Body Text};}
+    ::-webkit-scrollbar-thumb:hover {background:{color:Link};}
+
+
+    ::selection {color:#FFF; background:{color:Title};}
+    ::-moz-selection {color:#FFF;background:{color:Title};}
+    ::-webkit-selection {color:#FFF;background:{color:Title};}
+
+
+  /*------------------------------------*\
+      #DEFAULT LINK STYLES
+      applies to all links unless
+      others are specified otherwise
+  \*------------------------------------*/
+
+    a {
+      text-decoration: none;
+      color: {color:Link};
+      font:{font:Link};
+    }
+
+    a:hover {
+      color: {color:Link Hover};
+      -webkit-transition: all 0.10s ease-in-out;
+         -moz-transition: all 0.10s ease-in-out;
+          -ms-transition: all 0.10s ease-in-out;
+          -o-transition:  all 0.10s ease-in-out;
+    }
+
+
+  /*------------------------------------*\
+    #HEADER/SIDEBAR, A.K.A. MENU CONTENTS
+  \*------------------------------------*/
+
+    .menu {
+      margin: 5px 10px;
+    }
+
+    .menu-image {
+      {block:IfShowMenuImage}
+        width: 200px;
+        height: auto;
+      {/block:IfShowMenuImage}
+    }
+
+    .title {
+      color:{color:Title};
+      font: 16px {font:Title};
+    }
+
+    .menu .title a {}
+
+      .menu .title a:hover {}
+
+    .desc {
+      margin: 5px 0;
+      color: {color:Body Text};
+      font: 12px {font:Body};
+      cursor: default;
+    }
+
+
+    .menu .menu-links {
+      font: 14px {font:Link};
+    }
+
+    .menu .menu-links a {}
+
+
+    /*------------------------------------*\
+        #PAGINATION
+    \*------------------------------------*/
+
+    .pagination {
+      margin-top: 5px;
+      font: 13px {font:Link};
+    }
+
+    .previous {}
+
+    .out-of {}
+
+    .next {}
+
+    .current-page {}
+
+    .jump-page {}
+
+
+   /*------------------------------------*\
+      #SEARCH
+   \*------------------------------------*/
+
+    .search-input {
+      margin-top: 5px;
+      outline: none;
+      font: 12px {font:Body};
+      height: 2.5em;
+      background-color: {color:Background};
+      border: 1px solid {color:Border};
+      border-radius: 2px;
+      text-align: center;
+      -webkit-transition: all 0.10s ease-in-out;
+         -moz-transition: all 0.10s ease-in-out;
+          -ms-transition: all 0.10s ease-in-out;
+           -o-transition: all 0.10s ease-in-out;
+    }
+
+      .search-input:focus {
+        border: 1px solid {color:BorderTwo};
+      }
+
+    .search-submit {
+      outline: none;
+      cursor: pointer;
+      border-radius: 2px;
+      background-color: {color:Accent};
+      font: 12px {font:Body};
+      color: {color:Background};
+      width: 6em;
+      height: 2.5em;
+      border:1px solid {color:AccentTwo};
+    }
+
+      .search-submit:focus {
+        border: 1px solid {color:Tags};
+      }
+
+
+
+    /*------------------------------------*\
+      #CREDIT
+    \*------------------------------------*/
+
+    .credit a {
+      font: 10px {font:Link};
+      color: {color:Title};
+      margin: 5px 10px;
+    }
+
+      .credit a:hover {}
+
+
+  /*------------------------------------*\
+      #POST-CONTAINER/ENTRIES
+  \*------------------------------------*/
+    .posts-container {
+      margin-left: 10px;
+    }
+
+    /*basic margin between posts, removes list style from posts*/
+    .posts-container .entry{
+      width: 500px;
+      margin-top: 30px;
+      list-style: none;
+      font: 13px {font:Body};
+      color: {color:Body Text};
+    }
+
+    .entry:hover .post-info{
+      {block:IfHoverPostInfo}
+        opacity: 1;
+        overflow: visible;
+        margin: 5px 0 0;
+      {/block:IfHoverPostInfo}
+    }
+
+    .entry:hover .tags{
+      {block:IfHoverTags}
+        opacity: 1;
+        overflow: visible;
+        margin: 15px 0 0;
+      {/block:IfHoverTags}
+    }
+
+    blockquote {
+      padding: 0;
+      margin: 5px 10px;
+    }
+
+      blockquote p {
+        padding: 0;
+        margin: 0;
+      }
+
+  /*------------------------------------*\
+      #POST INFO/LINKS
+  \*------------------------------------*/
+
+
+    .post-info {
+      color: {color:Link};
+      display: inline-block;
+      font: 12px {font:Link};
+        {block:IfHoverPostInfo}
+          opacity: 0;
+          margin: 0;
+          height: 0;
+          overflow: hidden;
+                transition: 0.6s ease;
+             -o-transition: 0.6s ease;
+           -moz-transition: 0.6s ease;
+        -webkit-transition: 0.6s ease;
+        {/block:IfHoverPostInfo}
+    }
+
+    .post-info:hover {}
+
+    .post-info a {}
+    .post-info a:hover {}
+
+    .date {
+      display: inline-block;
+
+    }
+
+    .note-count {}
+
+    .source {}
+
+    .via {}
+
+    .reblog-link {
+      color: {color:Link};
+    }
+
+  /*------------------------------------*\
+      #TAGS
+  \*------------------------------------*/
+
+    ul .tags{
+      display: inline-block;
+      font: 12px {Font:Body};
+    }
+
+      .tags:first-child {
+          {block:IfHoverTags}
+            opacity: 0;
+            margin: 0px;
+            height: 0px;
+            overflow: hidden;
+                    transition:0.6s ease;
+                 -o-transition:0.6s ease;
+               -moz-transition:0.6s ease;
+            -webkit-transition:0.6s ease;
+          {/block:IfHoverTags}
+        margin-top:17px;
+      }
+
+      .tags a:hover {
+        color: {color:Link Hover};
+      }
+
+    .comma {
+      color: {color:Tags};
+    }
+
+      .tags .comma:last-child {
+        display: none;
+      }
+
+    /*tags on permalink pages*/
+    ul .tags-perma {}
+
+    /*------------------------------------*\
+        #POST-TYPE SPECIFIC
+    \*------------------------------------*/
+
+    /*text posts */
+    .text-title {
+      font:14px {font:Title};
+    }
+
+    .text-body {
+      font: 13px {font:Body};
+    }
+
+    .text-body p {
+      font: 12px {font:Body};
+    }
+
+    .text-body a {
+      font: 12px {font:Link};
+    }
+
+
+    /* photo posts */
+    .photo-caption {}
+
+
+    /* panorama posts */
+    .panorama-caption {}
+
+
+    /* photoset posts */
+    .photoset-caption {}
+
+
+    /* chat posts */
+    .chat .label {}
+
+    .line .odd {}
+
+    .line .even {}
+
+
+    /* quote posts */
+    .quote-text {
+      font: 13px {font:Title};
+    }
+
+    .quote-source {
+      font: 12px {font:Text};
+    }
+
+    .quote-source a {
+      font: 12px {font:Link};
+    }
+
+    /* link posts */
+    .link-name {}
+
+    .link-description {}
+
+
+    /* video posts */
+    .video-thumb {}
+
+    .video-play-count {}
+
+    .video-caption {}
+
+    .video-player {}
+
+
+    /* audio post */
+    .audio-album-art {}
+
+    .audio-track-name {}
+
+    .audio-track-artist {}
+
+    .audio-album-name {}
+
+    .audio-player {}
+
+    .audio-caption {}
+
+
+    /* ask posts */
+    .question {}
+
+    .asker {
+      font: 11px {font:Link};
+    }
+
+    .asker-question {
+      font: 14px {font:Title};
+    }
+
+    .asker-avatar {}
+
+    .answer {}
+
+    .answerer {
+      font: 11px {font:Link};
+    }
+
+    .answerer-answer {
+      font: 14px {font:Body};
+    }
+
+    .answerer-avatar {}
+
+    .replies {}
+
+
+    /* submission posts */
+    .submission-info {
+      font: 12px {font:Body};
+    }
+
+    .submitter-pic {}
+
+    .submitter-URL {
+      font: 12px {font:Link};
+    }
+
+
+    /*------------------------------------*\
+        #MISC
+    \*------------------------------------*/
+
+      /* permalink notes list */
+      .perma-notes {
+        font: 11px {font:Body};
+        margin-top: 20px;
+      }
+
+
+    /*{CustomCSS}*/
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- ***********************************
+    #HTML INDEX
+    *
+    * #MENU
+    * ... Image, Title, Descr., Menu Links, Menu-Link-Container
+    * ... Search Form
+    * ... Pagination
+    *
+    * CREDIT
+    *
+    * #POSTS, POST CONTAINER, ENTRY
+    *
+    *
+    * POST-TYPE SPECIFIC
+    *
+    * Text
+    * ... Title, Body
+    *
+    * Photo
+    * ... Caption
+    *
+    * Panorama
+    * ... Caption
+    *
+    * Photoset
+    * ... Caption
+    *
+    * Chat
+    * ... Label
+    *
+    * Quote
+    * ... Quote-Source
+    *
+    * Link
+    *  ... Description
+    *
+    * Video
+    * ... Caption, Thumbnail, Playcount
+    *
+    * Audio
+    * ... Caption, audio-name, audio-artist, audio-album
+    *
+    * Question
+    * ... asker, asker-question, asker-avatar
+    * ... answer, answerer, answerer-avatar
+    * ... replies
+    *
+    * Submissions
+    * ... submission-info
+    *
+    *
+    * CONTENTS OF POST INFO
+    *
+    * Post-Info
+    * ... Date
+    * ... Note-count/Permalink
+    * ... Via, Source
+    * ... Reblog-link
+    *
+    * TAGS
+    *
+    * PERMALINK PAGE
+    * ... Tags (same as non-permalink unless otherwise specified)
+    * .... PERMALINK NOTES LIST
+    *
+    *********************************** -->
+
+
+  <!--***********************************
+    HEADER/SIDEBAR CONTENTS
+  *********************************** -->
+
+  <div class="menu">
+
+    {block:IfShowMenuImage}
+      <img src="{image:Menu Image}"class="menu-image">
+    {block:IfShowMenuImage}
+
+    {block:IfShowTitle}
+      <div class="title">
+        <a href="/" title="{Title}">{Title}</a>
+      </div>
+    {/block:IfShowTitle}
+
+    {block:IfShowDescription}
+      <div class="desc">
+        {Description}
+      </div>
+    {block:IfShowDescription}
+
+    <div class="menu-link-container">
+
+      <a href="{BlogURL}" title="{lang:Home}" class="menu-links">{lang:Home}</a>
+
+      {block:AskEnabled}
+        <a href="/ask" title="{lang:Mail}"  class="menu-links">{lang:Mail}</a>
+      {/block:AskEnabled}
+
+      {block:SubmissionsEnabled}
+        <a href="/submit" title="Submit" class="menu-links">Submit</a>
+      {/block:SubmissionsEnabled}
+
+      {block:IfLink1}
+        <a href="{text:link1 url}" title="{text:link1}"  class="menu-links">{text:link1}</a>
+      {/block:IfLink1}
+
+      {block:IfLink2}
+        <a href="{text:link2 url}" title="{text:link2}"  class="menu-links">{text:link2}</a>
+      {/block:IfLink2}
+
+      {block:IfLink3}
+        <a href="{text:link3 url}" title="{text:link3}"  class="menu-links">{text:link3}</a>
+      {/block:IfLink3}
+
+      {block:IfLink4}
+        <a  href="{text:link4 url}" title="{text:link4}"  class="menu-links">{text:link4}</a>
+      {/block:IfLink4}
+
+    </div>
+
+
+  <!--***********************************
+      #SEARCH
+    *********************************** -->
+
+    {block:IfShowSearch}
+      <form action="/search" method="get">
+
+          <input type="search" placeholder="Search..." autocomplete="off" onfocus="this.value=''; this.onfocus=null;" name="q" class="search-input" value="{SearchQuery}"/>
+
+          <input title="{lang:Search}" type="submit" class="search-submit" value="{lang:Search}"/>
+
+      </form>
+     {/block:IfShowSearch}
+
+
+  <!--***********************************
+      #PAGINATION
+
+      1. Previous/next
+      2. # of #
+      3. Jump Number
+  *********************************** -->
+
+    <div class="pagination">
+
+      <!-- 1. Previous/Next -->
+       {block:Pagination}
+
+        {block:PreviousPage}
+          <a href="{PreviousPage}" title="{lang:Prev}" class="previous">
+            {lang:Prev}
+          </a>
+        {/block:PreviousPage}
+
+        {block:NextPage}
+          <a href="{NextPage}" title="{lang:Next}" class="next">{lang:Next}
+          </a>
+        {/block:NextPage}
+
+      {/block:Pagination}
+
+
+      <!-- 2. # of # Pagination -->
+      <!-- {block:Pagination}
+
+        {block:PreviousPage}
+          <a title="{lang:Prev}" href="{PreviousPage}" class="previous">
+            {lang:Prev}</a>
+        {/block:PreviousPage}
+
+        {CurrentPage}
+
+        <span class="out-of"> of </span>
+
+        {TotalPages}
+
+        {block:NextPage}
+          <a title="{lang:Next}" href="{NextPage}" class="next">{lang:Next}
+            </a>
+        {/block:NextPage}
+      {/block:Pagination} -->
+
+
+      <!--3 . Jump Number Pagination-->
+      <!-- {block:Pagination}
+
+        {block:PreviousPage}
+          <a title="{lang:Prev}" href="{PreviousPage}">{lang:Prev}</a>
+        {/block:PreviousPage}
+
+        {block:JumpPagination length="5"}
+
+          {block:CurrentPage}
+            <span class="current-page">{PageNumber}</span>
+          {/block:CurrentPage}
+
+          {block:JumpPage}
+            <a title="{PageNumber}" class="jump-page" href="{URL}">{PageNumber}
+            </a>
+          {/block:JumpPage}
+
+        {/block:JumpPagination}
+
+        {block:NextPage}
+          <a title="{lang:Next}" href="{NextPage}">{lang:Next}</a>
+        {/block:NextPage}
+
+      {/block:Pagination} -->
+
+    <!-- End of pagination div -->
+    </div>
+
+  </div>
+  <!--***********************************
+    #END OF MENU DIV
+  *********************************** -->
+
+
+  <!--***********************************
+    #CREDIT
+  *********************************** -->
+
+    <div class="credit">
+      <a  href="/" title="Credit" target="_blank">Credit</a>
+    </div>
+
+
+  <!--***********************************
+    #POSTS, POST CONTAINER, ENTRY
+  *********************************** -->
+
+    <div class="posts-container">
+      <ol class="posts">
+
+        {block:Posts}
+
+        <div class="entry">
+
+    <!--***********************************
+      #POST-TYPE SPECIFIC
+    *********************************** -->
+
+          <!-- Text posts -->
+          {block:Text}
+            <li class="post text">
+
+              {block:Title}
+                <h3><a title="{Title}" href="{Permalink}" class="text-title">{Title}</a></h3>
+              {/block:Title}
+
+              <div class="text-body">
+                {Body}
+              </div>
+            </li>
+          {/block:Text}
+
+
+          <!-- Single photo posts -->
+          {block:Photo}
+            <li class="post photo">
+
+              <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+
+            {block:IfShowCaptions}
+              {block:Captions}
+                <div class="photo-caption">{Caption}</div>
+              {/block:Captions}
+            {/block:IfShowCaptions}
+
+            </li>
+          {/block:Photo}
+
+
+          <!-- Panorama photo posts -->
+          {block:Panorama}
+            <li class="post panorama">
+
+              {LinkOpenTag}
+                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
+
+              {block:IfShowCaptions}
+                {block:Captions}
+                  <div class="panorama-caption">{Caption}</div>
+                {/block:Captions}
+              {/block:IfShowCaptions}
+
+            </li>
+          {/block:Panorama}
+
+
+          <!-- Photoset posts -->
+          {block:Photoset}
+            <li class="post photoset">
+
+              {Photoset-500}
+
+              {block:IfShowCaptions}
+                {block:Captions}
+                  <div class="photoset-caption">{Caption}</div>
+                {/block:Captions}
+              {/block:IfShowCaptions}
+            </li>
+          {/block:Photoset}
+
+
+          <!-- Chat posts -->
+          {block:Chat}
+            <li class="post chat">
+
+              {block:Title}
+                <h3><a title="{Title}" href="{Permalink}">{Title}</a></h3>
+              {/block:Title}
+
+              <ul class="chat">
+                {block:Lines}
+
+                  <li class="{Alt} user_{UserNumber}">
+
+                    {block:Label}
+                      <span class="label">{Label}</span>
+                    {/block:Label}
+
+                    {Line}
+
+                  </li>
+
+                {/block:Lines}
+              </ul>
+
+            </li>
+          {/block:Chat}
+
+
+          <!-- Quote posts -->
+          {block:Quote}
+            <li class="post quote">
+
+              <div class="quote-text">
+                {Quote}
+              </div>
+
+              {block:Source}
+                <div class="quote-source" target="_blank">{Source}</div>
+              {/block:Source}
+
+            </li>
+          {/block:Quote}
+
+
+          <!-- Link posts -->
+          {block:Link}
+            <li class="post link">
+
+              <a title="{Name}" href="{URL}" class="link-name" {Target}>{Name}</a>
+
+              <!-- (rendered if it has a description) -->
+              {block:Description}
+                <div class="link-description">{Description}</div>
+              {/block:Description}
+
+            </li>
+          {/block:Link}
+
+
+          <!-- Video posts -->
+          {block:Video}
+            <li class="post video">
+
+              <!--{block:VideoThumbnail}-->
+              <!--  <div class="video-thumb">-->
+              <!--    {VideoThumbnailURL}-->
+              <!--  </div>-->
+              <!--{/block:VideoThumbnail}-->
+
+              <!-- <div class="video-play-count"> -->
+                <!-- {PlayCount} -->
+                <!-- {PlayCountWithLabel} -->
+              <!-- </div> -->
+
+              <div class="video-player">
+                {video-500}
+              </div>
+
+              {block:IfShowCaptions}
+                {block:Captions}
+                  <div class="video-caption">{Caption}</div>
+                {/block:Captions}
+              {/block:IfShowCaptions}
+
+            </li>
+          {/block:Video}
+
+
+          <!-- Audio posts -->
+          {block:Audio}
+            <li class="post audio">
+
+              <!--<div class="audio-album-art">-->
+              <!--  {block:AlbumArt}-->
+              <!--    {AlbumArtURL}-->
+              <!--  {/block:AlbumArt}-->
+              <!--</div>-->
+
+              <!--<div class="audio-track-name">-->
+              <!--  {block:TrackName}-->
+              <!--    {TrackName}-->
+              <!--  {/block:TrackName}-->
+              <!--</div>-->
+
+              <!-- <div class="audio-track-artist">-->
+              <!--  {block:Artist}-->
+              <!--    {Artist}-->
+              <!--  {/block:Artist}-->
+              <!--</div>  -->
+
+            <!--<div class="audio-album-name">-->
+            <!--    {block:Album}-->
+            <!--      {Album}-->
+            <!--    {/block:Album}-->
+            <!--  </div>-->
+
+              <div class="audio-player">
+                {AudioEmbed}
+              </div>
+
+              {block:IfShowCaptions}
+                {block:Captions}
+                  <div class="audio-caption">{Caption}</div>
+                {/block:Captions}
+              {/block:IfShowCaptions}
+
+            </li>
+          {/block:Audio}
+
+
+          <!-- Ask/Answer posts -->
+          {block:Answer}
+            <div class="question">
+
+              <img class="asker-avatar" src="{AskerPortraitURL-48}" alt=""></div>
+              <!-- (other options: 16, 24, 30,  40, 48, 64, 96, 128) -->
+              <div class="asker">{Asker}</div>
+              <div class="asker-question">{Question}</div>
+
+
+            {block:Answerer}
+
+              <div class="answer">
+
+                <img class="answerer-avatar" src="{AnswererPortraitURL-48}" alt="">
+                <!-- other options: 16, 24, 30,  40, 48, 64, 96, 128 -->
+
+                <div class="answerer">{Answerer}</div>
+                <div class="answerer-answer">{Answer}</div>
+
+              </div>
+
+            {/block:Answerer}
+
+            <div class="replies">
+              {Replies}
+            </div>
+
+          {/block:Answer}
+
+
+     <!-- Submission post -->
+        {block:SubmissionsEnabled}
+
+          {block:Submission}
+            <div class="submission-info">
+
+              <img class="submitter-pic">
+                {SubmitterPortraitURL-64}
+              </div>
+                <!-- other options: 16, 24, 30,  40, 48, 64, 96, 128 -->
+
+              <div class="submitter-URL">
+                {SubmitterURL}
+              </div>
+
+            </div>
+          {/block:Submission}
+
+        {/block:SubmissionsEnabled}
+
+
+  <!--***********************************
+        #POST INFO
+    *********************************** -->
+
+  <div class="post-info">
+
+  <!--***********************************
+    # DATE
+    *********************************** -->
+    {block:Date}
+
+      <div class="date">
+        <!-- Formats:
+        1. 3 hours ago
+        2. 3:00pm
+        3. 03.00.00pm
+        4. Sunday, 3 January 2016
+        5. Jan 3th, '16
+        6. 01-03-2016 -->
+
+         {TimeAgo}
+
+        <!-- {12Hour}:{Minutes}{AmPm}  -->
+        <!-- {12HourWithZero}.{Minutes}.{Seconds}{CapitalAmPm} -->
+        <!-- {DayOfWeek}, {DayOfMonth} {Month} {Year} -->
+        <!-- {ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, '{ShortYear} -->
+        <!-- {MonthNumberWithZero}-{DayOfMonthWithZero}-{Year} -->
+      </div>
+
+
+    <!--***********************************
+          #NOTE COUNT/PERMALINK
+      *********************************** -->
+
+      <a title="{lang:Permalink}" class="note-count" href="{Permalink}">
+        {block:NoteCount}
+          <!--{NoteCount} -->
+           {NoteCountWithLabel}
+        <!--{/block:NoteCount}-->
+      </a>
+
+      <!--***********************************
+        #SOURCE, VIA
+      *********************************** -->
+
+      {block:RebloggedFrom}
+
+          <a href="{ReblogParentURL}" title="{lang:Reblogged from ReblogParentName}" title="{ReblogParentURL}" target="_blank" class="via">{lang:Via}</a>
+          <!-- (More options:) -->
+          <!-- {ReblogParentName} -->
+          <!-- {ReblogParentPortraitURL-64} -->
+
+
+          <a href="{ReblogRootURL}"title="{lang:Originally from ReblogRootName}"  title="{ReblogRootURL}"target="_blank" class="source">{lang:Source}</a>
+          <!-- (More options:) -->
+          <!-- {ReblogRootName} -->
+          <!-- {ReblogRootPortraitURL-64} -->
+
+      {/block:RebloggedFrom}
+
+
+      <!--***********************************
+        #REBLOG LINK
+      *********************************** -->
+
+      <a title="Reblog" href="{ReblogURL}" target=”_blank” class="reblog-link">
+        Reblog</a>
+
+
+  <!--Date block wraps around all post-info to ensure 'ghost div' doesn't appear underneath ask box, etc. -->
+
+  {/block:Date}
+
+
+   <!--***********************************
+        #TAGS
+      *********************************** -->
+
+      <div class="tags">
+        {block:HasTags}
+
+        	<ul class="tags">
+          {block:Tags}
+
+              <a href="{TagURL}" title="{Tag}">{Tag}</a>
+                <!-- (separates tags with a comma)   -->
+                <!-- <span class="comma">, </span> -->
+
+
+          {/block:Tags}
+          </ul>
+
+        {/block:HasTags}
+      </div>
+
+
+  <!-- End of Post-Info Div -->
+  </div>
+
+    <!--***********************************
+        #PERMALINK PAGES
+      *********************************** -->
+
+        {block:PermalinkPage}
+
+    <!--***********************************
+         #PERMALINK NOTES LIST
+       *********************************** -->
+
+          {block:PostNotes}
+            <div class="perma-notes">
+              {PostNotes-16}
+            </div>
+          {/block:PostNotes}
+
+
+        {/block:PermalinkPage}
+
+      <!-- End of Entry Div -->
+      </div>
+
+    {/block:Posts}
+
+    <!-- Posts -->
+    </ol>
+
+  <!-- Posts container -->
+  </div>
+
+  </body>
+</html>
